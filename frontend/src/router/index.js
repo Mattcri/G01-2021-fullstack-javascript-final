@@ -24,4 +24,15 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  const user = Auth.currentUser
+  const authRequired = to.matched.some(route => route.meta.login)
+
+  if (!user && authRequired) {
+    next('/')
+  } else {
+    next()
+  }
+})
+
 export default router
