@@ -9,14 +9,13 @@
 // /* eslint-disable import/no-extraneous-dependencies, global-require */
 // const webpack = require('@cypress/webpack-preprocessor')
 
+const path = require('path')
+
 module.exports = (on, config) => {
-  // on('file:preprocessor', webpack({
-  //  webpackOptions: require('@vue/cli-service/webpack.config'),
-  //  watchOptions: {}
-  // }))
+  const fixturesFolder = path.join(path.resolve('.'), '../fixtures')
 
   return Object.assign({}, config, {
-    fixturesFolder: 'tests/e2e/fixtures',
+    fixturesFolder,
     integrationFolder: 'tests/e2e/specs',
     screenshotsFolder: 'tests/e2e/screenshots',
     videosFolder: 'tests/e2e/videos',
