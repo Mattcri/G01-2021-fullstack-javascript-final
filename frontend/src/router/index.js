@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Login.vue'
 import Products from '../views/Products.vue'
+import { Auth } from '@/firebase'
 
 Vue.use(VueRouter)
 
