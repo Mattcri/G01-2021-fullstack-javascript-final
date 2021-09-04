@@ -10,4 +10,4 @@ describe('login test suite', () => {
 
     cy.location('pathname').should('equal', '/productos')
   })
-});
+})

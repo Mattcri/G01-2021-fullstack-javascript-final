@@ -1,5 +1,6 @@
 <template>
   <v-main class="home">
+
     <v-card width="400px" class="mx-auto my-auto">
       <v-card-title class="pb-0">
         <h1 class="mx-auto mb-5">Ingreso</h1>
@@ -36,6 +37,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import { firebaseApp } from '@/firebase'
 
 export default {
@@ -52,16 +54,20 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['setAlert']),
     validate () {
       return this.$refs.form.validate()
     },
     async login () {
       if (this.validate()) {
-        await firebaseApp.auth().signInWithEmailAndPassword(this.email, this.password)
-        this.$router.push({ name: 'Products' })
+        try {
+          await firebaseApp.auth().signInWithEmailAndPassword(this.email, this.password)
+          this.$router.push({ name: 'Products' })
+        } catch (error) {
+          this.setAlert({ message: 'Error al hacer autenticación', type: 'error' })
+        }
       }
     }
-
   }
 }
 </script>
