@@ -1,8 +1,11 @@
 .DS_Store
 node_modules
 /dist
+
 firebase-service-account.json
 local.database.sqlite3
+test.database.sqlite3
+coverage
 
 /tests/e2e/videos/
 /tests/e2e/screenshots/
