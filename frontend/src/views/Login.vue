@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { Auth } from '@/firebase'
+import { firebaseApp } from '@/firebase'
 
 export default {
   data () {
@@ -57,7 +57,7 @@ export default {
     },
     async login () {
       if (this.validate()) {
-        await Auth.signInWithEmailAndPassword(this.email, this.password)
+        await firebaseApp.auth().signInWithEmailAndPassword(this.email, this.password)
         this.$router.push({ name: 'Products' })
       }
     }

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import { Auth } from '@/firebase'
+import { firebaseApp } from '@/firebase'
 
 Vue.use(Vuex)
 
@@ -20,7 +20,7 @@ export default new Vuex.Store({
       const productsURL = '/api/products'
 
       try {
-        const token = await Auth.currentUser?.getIdToken(true)
+        const token = await firebaseApp.auth().currentUser?.getIdToken(true)
         const response = await axios.get(productsURL, { headers: { Authorization: `Bearer ${token}` } })
         commit('SET_PRODUCTS', response.data)
       } catch (error) {

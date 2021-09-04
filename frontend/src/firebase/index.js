@@ -4,6 +4,5 @@ import config from './config'
 
 const firebaseApp = firebase.initializeApp(config)
 
-const Auth = firebaseApp.auth()
 
-export { Auth }
+export { firebaseApp }
