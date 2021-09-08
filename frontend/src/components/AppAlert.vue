@@ -7,7 +7,7 @@
     border="left"
     @input="closeAlert"
   >
-
+  {{ message }}
   </v-alert>
 </template>
 
