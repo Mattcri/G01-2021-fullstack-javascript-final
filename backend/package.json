@@ -2,29 +2,34 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
+    "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "test": "jest --runInBand --coverage",
+    "eslint": "eslint",
+    "lint": " eslint .",
     "jest": "jest",
-    "sequelize": "sequelize",
-    "lint": "eslint ."
+    "sequelize": "sequelize"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "firebase-admin": "^9.11.1",
-    "sequelize": "^6.6.5"
+    "firebase-admin": "^9.6.0",
+    "sequelize": "^6.6.2"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-plugin-jest": "^24.4.0",
-    "jest": "^27.1.0",
-    "nodemon": "^2.0.12",
+    "eslint": "^7.24.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "nodemon": "^2.0.7",
     "sequelize-cli": "^6.2.0",
     "sqlite3": "^5.0.2",
-    "supertest": "^6.1.6"
+    "supertest": "^6.1.3"
   }
 }
