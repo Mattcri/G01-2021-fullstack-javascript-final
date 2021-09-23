@@ -22,7 +22,7 @@ jest.mock('@/firebase', () => ({
       onAuthStateChanged: jest.fn().mockImplementation((callback) => {
         const user = { name: 'Matias' }
         callback(user)
-      }),
+      })
     })
   }
 }))

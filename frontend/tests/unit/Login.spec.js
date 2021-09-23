@@ -13,9 +13,9 @@ jest.mock('@/firebase', () => ({
     auth: jest.fn().mockReturnValue({
       signInWithEmailAndPassword: jest.fn(),
       onAuthStateChanged: jest.fn().mockImplementation((callback) => {
-        const user = { name: 'Matias'}
+        const user = { name: 'Matias' }
         callback(user)
-      }),
+      })
     })
   }
 }))
